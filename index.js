@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var getNumUnanswered = (function() {
     var request = require("request");
 
