@@ -1,0 +1,15 @@
+{
+  "name": "GDSE Unanswered questions chart",
+  "version": "1.0.0",
+  "description": "Renders a pretty chart of GDSE unanswered count through time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anko <an@cyan.io>",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.49.0"
+  }
+}
