@@ -1,5 +1,5 @@
 {
-  "name": "GDSE Unanswered questions chart",
+  "name": "GDSEUnansweredChart",
   "version": "1.0.0",
   "description": "Renders a pretty chart of GDSE unanswered count through time",
   "main": "index.js",

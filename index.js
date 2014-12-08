@@ -20,6 +20,23 @@ var getNumUnanswered = (function() {
     };
 })();
 
-getNumUnanswered(function(error, n) {
-    console.log(n);
-});
+var interval = 1000 // 1 second
+             * 60   // 1 minute
+             * 10   // 10 minutes
+
+var printIt = function() {
+    getNumUnanswered(function(error, n) {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log(n);
+        }
+    });
+};
+
+// Initial
+printIt();
+
+// Interval'd
+setInterval(printIt, interval);
+
