@@ -75,10 +75,6 @@ vis.append("g").call(xAxis)
 vis.append("g").call(yAxis)
     .attr("class", "y axis")
 
-style = svg.append("defs").append("style").attr("type", "text/css");
-
-style.text("body { font : 10px sans-serif; }");
-
 vis.selectAll("text").style({
     "font-family" : "sans-serif",
     "font-size" : 10
