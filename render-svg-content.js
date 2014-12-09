@@ -55,7 +55,12 @@ var vis = svg.append("g")
     .attr("transform", "translate(" + marginLeft + "," + marginTop + ")");
 
 // Make a chart
-svg.append("path").datum(data).attr("d", line);
+svg.append("path").datum(data).attr("d", line)
+    .style({
+        fill : "none",
+        stroke : "steelblue",
+        "stroke-width" : 1.5
+    });
 svg.append("g").call(xAxis);
 svg.append("g").call(yAxis);
 
