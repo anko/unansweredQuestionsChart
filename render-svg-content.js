@@ -60,31 +60,28 @@ var vis = svg.append("g")
     .attr("transform", "translate(" + marginLeft + "," + marginTop + ")");
 
 // Make a chart
-svg.append("path").datum(data).attr("d", line)
+vis.append("path").datum(data).attr("d", line)
     .style({
         fill : "none",
         stroke : "steelblue",
         "stroke-width" : 1.5
     });
-svg.append("g").call(xAxis)
+vis.append("g").call(xAxis)
     .attr("class", "x axis")
     .attr("transform",
-            "translate(" + marginLeft + "," + (height - marginBottom) + ")")
+            "translate(0," + height + ")")
     .selectAll("path").style("display", "none");
 
-svg.append("g").call(yAxis)
+vis.append("g").call(yAxis)
     .attr("class", "y axis")
-    .attr("transform",
-            "translate(" + marginLeft + "," + marginTop + ")");
 
 // Tune axis lines
-svg.selectAll(".axis").selectAll("line,path").style({
+vis.selectAll(".axis").selectAll("line,path").style({
     "shape-rendering": "crispEdges",
     fill : "none",
     "stroke-width" : 1,
     "stroke" : "black"
 });
-xAxis
 
 // Log the resulting SVG
 console.log(svg.node().outerHTML);
