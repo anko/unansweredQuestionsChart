@@ -84,6 +84,8 @@ vis.selectAll("text").style({
     "font-size" : 10
 });
 
+vis.selectAll(".y.axis").selectAll("text").attr("dy", "3");
+
 // Tune axis lines
 vis.selectAll(".axis").selectAll("line,path").style({
     "shape-rendering": "crispEdges",
