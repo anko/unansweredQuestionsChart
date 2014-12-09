@@ -26,8 +26,10 @@ var data = (function() {
 
 var width  = 500;
 var height = 200;
-var marginLeft = 40;
-var marginTop  = 40;
+var marginLeft   = 40;
+var marginTop    = 40;
+var marginRight  = 40;
+var marginBottom = 40;
 
 var x = d3.time.scale()
     .range([0, width])
@@ -50,7 +52,10 @@ var line = d3.svg.line()
 // Create SVG element
 var svg = d3.select("body").append("svg");
 var vis = svg.append("g")
-    .attr({ width : width, height : height })
+    .attr({
+        width : marginLeft + width + marginRight,
+        height : marginTop + height + marginBottom
+    })
     .append("g")
     .attr("transform", "translate(" + marginLeft + "," + marginTop + ")");
 
@@ -61,8 +66,13 @@ svg.append("path").datum(data).attr("d", line)
         stroke : "steelblue",
         "stroke-width" : 1.5
     });
-svg.append("g").call(xAxis);
-svg.append("g").call(yAxis);
+svg.append("g").call(xAxis)
+    .attr("transform",
+            "translate(" + marginLeft + "," + (height - marginBottom) + ")");
+
+svg.append("g").call(yAxis)
+    .attr("transform",
+            "translate(" + marginLeft + "," + marginTop + ")");
 
 
 // Log the resulting SVG
