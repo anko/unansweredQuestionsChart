@@ -31,7 +31,7 @@ var printIt = function() {
         if (error) {
             console.error(error);
         } else {
-            console.log(n);
+            console.log(Number(new Date()) + " " + n);
         }
     });
 };
