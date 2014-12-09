@@ -5,3 +5,4 @@ cat svg-doctype.xml > "$SVG_NAME"      # DOCTYPE declaration
 ./render-svg-content.js >> "$SVG_NAME" # Actual SVG contents
 
 inkscape -z -e "$PNG_NAME" "$SVG_NAME"
+mogrify -trim +repage "$PNG_NAME"
