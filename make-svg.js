@@ -8,7 +8,11 @@ var data = (function() {
     return fs.readFileSync("data", {encoding:"utf-8"})
         .split("\n")
         .map(function(line) {
-            return line.split(" ");
+            var fields = line.split(" ");
+            return {
+                date : new Date(Number(fields[0])),
+                number : Number(fields[1])
+            };
         });
 })();
 
